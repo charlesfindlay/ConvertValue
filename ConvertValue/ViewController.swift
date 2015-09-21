@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var showAnswerHere: UILabel!
     @IBOutlet weak var myInput: UITextField!
+    @IBOutlet weak var convertToCMOrInches: UISwitch!
     
 
     override func viewDidLoad() {
@@ -28,8 +29,14 @@ class ViewController: UIViewController {
     
     @IBAction func pressForAnswer(sender: AnyObject) {
         let userInput: Int? = self.myInput.text.toInt()
-        let answer = Double(userInput!) * 2.54
-        let textAnswer = "\(answer) centimeters"
+        var textAnswer = ""
+        if (convertToCMOrInches.on) {
+            let answer = Double(userInput!) * 2.54
+            textAnswer = "\(answer) centimeters"
+        } else {
+            let answer = Double(userInput!) * 0.39
+            textAnswer = "\(answer) inches"
+        }
         showAnswerHere.text = textAnswer
         
     }

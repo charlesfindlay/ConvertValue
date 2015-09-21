@@ -49,15 +49,23 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMA-5n-JOg">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="176" y="230" width="51" height="31"/>
+                                </variation>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uMA-5n-JOg" firstAttribute="top" secondItem="PZa-ab-mwM" secondAttribute="bottom" constant="26" id="02R-0d-lKK"/>
                             <constraint firstItem="PZa-ab-mwM" firstAttribute="top" secondItem="ugB-6E-YGU" secondAttribute="bottom" constant="28" id="156-RV-h6I">
                                 <variation key="widthClass=compact" constant="27"/>
                             </constraint>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cN7-d8-pkx" secondAttribute="bottom" constant="200" id="46G-af-2Kh"/>
                             <constraint firstItem="ugB-6E-YGU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="113" id="7OK-bx-rWx"/>
                             <constraint firstAttribute="centerX" secondItem="PZa-ab-mwM" secondAttribute="centerX" id="HAp-NY-FAb"/>
+                            <constraint firstAttribute="centerX" secondItem="uMA-5n-JOg" secondAttribute="centerX" id="Mau-wR-cAn"/>
                             <constraint firstAttribute="centerX" secondItem="cN7-d8-pkx" secondAttribute="centerX" id="R1E-zz-eDX"/>
                             <constraint firstAttribute="centerX" secondItem="ugB-6E-YGU" secondAttribute="centerX" id="f1V-te-s40"/>
                         </constraints>
@@ -66,12 +74,15 @@
                                 <exclude reference="ugB-6E-YGU"/>
                                 <exclude reference="cN7-d8-pkx"/>
                                 <exclude reference="PZa-ab-mwM"/>
+                                <exclude reference="uMA-5n-JOg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7OK-bx-rWx"/>
                                 <exclude reference="f1V-te-s40"/>
                                 <exclude reference="156-RV-h6I"/>
                                 <exclude reference="HAp-NY-FAb"/>
+                                <exclude reference="02R-0d-lKK"/>
+                                <exclude reference="Mau-wR-cAn"/>
                                 <exclude reference="R1E-zz-eDX"/>
                                 <exclude reference="46G-af-2Kh"/>
                             </mask>
@@ -81,24 +92,29 @@
                                 <include reference="ugB-6E-YGU"/>
                                 <include reference="cN7-d8-pkx"/>
                                 <include reference="PZa-ab-mwM"/>
+                                <include reference="uMA-5n-JOg"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="7OK-bx-rWx"/>
                                 <include reference="f1V-te-s40"/>
                                 <include reference="156-RV-h6I"/>
                                 <include reference="HAp-NY-FAb"/>
+                                <include reference="02R-0d-lKK"/>
+                                <include reference="Mau-wR-cAn"/>
                                 <include reference="R1E-zz-eDX"/>
                                 <include reference="46G-af-2Kh"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="convertToCMOrInches" destination="uMA-5n-JOg" id="m0L-xp-EGr"/>
                         <outlet property="myInput" destination="PZa-ab-mwM" id="9MB-jA-WUs"/>
                         <outlet property="showAnswerHere" destination="ugB-6E-YGU" id="6TE-2y-C9O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="360" y="325"/>
         </scene>
     </scenes>
 </document>
