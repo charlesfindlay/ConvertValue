@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var showAnswerHere: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func pressForAnswer(sender: AnyObject) {
+        let answer = "10 inches is 254 centimeters"
+        showAnswerHere.text = answer
+    }
+    
 
 }
 
