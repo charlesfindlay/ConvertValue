@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many centimeters is 10 inches?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-6E-YGU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many inches to convert to centimeters?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-6E-YGU">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -31,40 +31,69 @@
                                     <action selector="pressForAnswer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fmq-hX-sxN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZa-ab-mwM">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="SDh-uR-yXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SDh-uR-yXB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="SDh-uR-yXB"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cN7-d8-pkx" firstAttribute="top" secondItem="ugB-6E-YGU" secondAttribute="bottom" constant="130" id="6J9-VG-RJA"/>
-                            <constraint firstAttribute="centerX" secondItem="cN7-d8-pkx" secondAttribute="centerX" id="MJw-wG-AaW"/>
-                            <constraint firstAttribute="centerX" secondItem="ugB-6E-YGU" secondAttribute="centerX" id="SJW-QN-ruv"/>
-                            <constraint firstItem="ugB-6E-YGU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="199" id="aJB-qg-Zej"/>
+                            <constraint firstItem="PZa-ab-mwM" firstAttribute="top" secondItem="ugB-6E-YGU" secondAttribute="bottom" constant="28" id="156-RV-h6I">
+                                <variation key="widthClass=compact" constant="27"/>
+                            </constraint>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cN7-d8-pkx" secondAttribute="bottom" constant="200" id="46G-af-2Kh"/>
+                            <constraint firstItem="ugB-6E-YGU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="113" id="7OK-bx-rWx"/>
+                            <constraint firstAttribute="centerX" secondItem="PZa-ab-mwM" secondAttribute="centerX" id="HAp-NY-FAb"/>
+                            <constraint firstAttribute="centerX" secondItem="cN7-d8-pkx" secondAttribute="centerX" id="R1E-zz-eDX"/>
+                            <constraint firstAttribute="centerX" secondItem="ugB-6E-YGU" secondAttribute="centerX" id="f1V-te-s40"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ugB-6E-YGU"/>
                                 <exclude reference="cN7-d8-pkx"/>
+                                <exclude reference="PZa-ab-mwM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="SJW-QN-ruv"/>
-                                <exclude reference="aJB-qg-Zej"/>
-                                <exclude reference="6J9-VG-RJA"/>
-                                <exclude reference="MJw-wG-AaW"/>
+                                <exclude reference="7OK-bx-rWx"/>
+                                <exclude reference="f1V-te-s40"/>
+                                <exclude reference="156-RV-h6I"/>
+                                <exclude reference="HAp-NY-FAb"/>
+                                <exclude reference="R1E-zz-eDX"/>
+                                <exclude reference="46G-af-2Kh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ugB-6E-YGU"/>
                                 <include reference="cN7-d8-pkx"/>
+                                <include reference="PZa-ab-mwM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="SJW-QN-ruv"/>
-                                <include reference="aJB-qg-Zej"/>
-                                <include reference="6J9-VG-RJA"/>
-                                <include reference="MJw-wG-AaW"/>
+                                <include reference="7OK-bx-rWx"/>
+                                <include reference="f1V-te-s40"/>
+                                <include reference="156-RV-h6I"/>
+                                <include reference="HAp-NY-FAb"/>
+                                <include reference="R1E-zz-eDX"/>
+                                <include reference="46G-af-2Kh"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="myInput" destination="PZa-ab-mwM" id="9MB-jA-WUs"/>
                         <outlet property="showAnswerHere" destination="ugB-6E-YGU" id="6TE-2y-C9O"/>
                     </connections>
                 </viewController>

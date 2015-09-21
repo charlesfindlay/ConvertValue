@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var showAnswerHere: UILabel!
+    @IBOutlet weak var myInput: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,11 @@ class ViewController: UIViewController {
 
     
     @IBAction func pressForAnswer(sender: AnyObject) {
-        let answer = "10 inches is 254 centimeters"
-        showAnswerHere.text = answer
+        let userInput: Int? = self.myInput.text.toInt()
+        let answer = Double(userInput!) * 2.54
+        let textAnswer = "\(answer) centimeters"
+        showAnswerHere.text = textAnswer
+        
     }
     
 
